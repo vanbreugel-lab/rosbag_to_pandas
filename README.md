@@ -7,11 +7,10 @@ This was almost by Claude...
 ## Features
 
 - Convert ROS bag files to HDF5 format
-- Load HDF5 datasets into pandas DataFrames
+- Export pandas compatible HDF Store file with a key for each topic
 - Support for nested ROS message types (Pose, Twist, Vector3, etc.)
 - Handle fixed-length and dynamic arrays
 - List topics in bag files without reading all messages
-- Export to pandas-compatible HDF5 format
 
 ## Installation
 
@@ -93,6 +92,9 @@ bag2hdf5 my_data.bag --out output.hdf5
 
 # Convert specific topics
 bag2hdf5 my_data.bag --topic /mavros/imu/data /trisonica
+
+# Convert a bunch of topics (this is what was used for the example)
+bag2hdf5 drone_flight_demo_20260130.bag --topic /trisonica  /mavros/imu/data /mavros/local_position/pose /mavros/rc/in /trisonica_body_level /trisonica_global
 ```
 
 ## Package Structure
